@@ -1,0 +1,1 @@
+A mini utility to convert [Elasticsearch's REST spec](https://github.com/elastic/elasticsearch/blob/master/rest-api-spec) to Console's(Kibana) autocomplete format.  This is a WIP and will be integrated into the Kibana repository when completed.  Until this is stable it'll be used to assist with semi-manually updating Console's autocompletion rules.
