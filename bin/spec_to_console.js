@@ -1,4 +1,5 @@
 const fs = require('fs')
+const path = require('path')
 const program = require('commander')
 const glob = require('glob')
 
@@ -7,7 +8,8 @@ const convert = require('../lib/convert')
 
 program
  .version(packageJSON.version)
- .option('-g --glob []')
+ .option('-g --glob []', 'Files to convert')
+ .option('-o --output', 'Output directory')
  .parse(process.argv)
 
 if (!program.glob) {
@@ -18,5 +20,12 @@ if (!program.glob) {
 const files = glob.sync(program.glob)
 files.forEach(file => {
   const spec = JSON.parse(fs.readFileSync(file))
-  console.log(JSON.stringify(convert(spec), null, 2))
+  const output = JSON.stringify(convert(spec), null, 2)
+  if (program.output) {
+    const outputName = path.basename(file)
+    const outputPath = path.resolve(program.output, outputName)
+    fs.writeFileSync(output)
+  } else {
+    console.log(output)
+  }
 })
