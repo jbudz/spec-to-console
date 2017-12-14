@@ -6,5 +6,17 @@ Until it's stable I'm using it to semi-manually update Console's autocompletion 
 ### Usage
 `node bin/spec_to_console.js -g <glob>`
 
-#### Information used in Console that is not available in the REST spec
+
+### Retrieving the spec
+```
+cd es-spec
+git init
+git remote add origin https://github.com/elastic/elasticsearch
+git config core.sparsecheckout true
+echo "rest-api-spec/src/main/resources/rest-api-spec/api/*" > .git/info/sparse-checkout
+git pull --depth=1 origin master
+```
+
+
+### Information used in Console that is not available in the REST spec
 * Request bodies
