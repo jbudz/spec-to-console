@@ -5,3 +5,6 @@ Until it's stable I'm using it to semi-manually update Console's autocompletion 
 
 ### Usage
 `node index.js -g <glob>`
+
+#### Information used in Console that is not available in the REST spec
+* Request bodies
