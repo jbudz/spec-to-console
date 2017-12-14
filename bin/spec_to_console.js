@@ -9,7 +9,7 @@ const convert = require('../lib/convert')
 program
  .version(packageJSON.version)
  .option('-g --glob []', 'Files to convert')
- .option('-o --output', 'Output directory')
+ .option('-d --directory []', 'Output directory')
  .parse(process.argv)
 
 if (!program.glob) {
@@ -21,10 +21,10 @@ const files = glob.sync(program.glob)
 files.forEach(file => {
   const spec = JSON.parse(fs.readFileSync(file))
   const output = JSON.stringify(convert(spec), null, 2)
-  if (program.output) {
+  if (program.directory) {
     const outputName = path.basename(file)
-    const outputPath = path.resolve(program.output, outputName)
-    fs.writeFileSync(output)
+    const outputPath = path.resolve(program.directory, outputName)
+    fs.writeFileSync(outputPath, output)
   } else {
     console.log(output)
   }
