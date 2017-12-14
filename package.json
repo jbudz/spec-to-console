@@ -7,7 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "format": "prettier **/*.js --write"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,8 @@
   },
   "homepage": "https://github.com/jbudz/spec-to-console#readme",
   "devDependencies": {
-    "jest": "^21.0.1"
+    "jest": "^21.0.1",
+    "prettier": "^1.9.2"
   },
   "dependencies": {
     "commander": "^2.11.0",
