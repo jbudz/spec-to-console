@@ -18,5 +18,5 @@ if (!program.glob) {
 const files = glob.sync(program.glob)
 files.forEach(file => {
   const spec = JSON.parse(fs.readFileSync(file))
-  console.log(convert(spec))
+  console.log(JSON.stringify(convert(spec), null, 2))
 })
