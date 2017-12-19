@@ -18,7 +18,7 @@ git pull --depth=1 origin master
 ### Usage
 ```
 node bin/spec_to_console.js \
-  -g es-spec/rest-api-spec/src/main/resources/rest-api-spec/api/*.json \
+  -g "es-spec/rest-api-spec/src/main/resources/rest-api-spec/api/*.json" \
   -d output
 ```
 
