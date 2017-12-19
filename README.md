@@ -24,3 +24,5 @@ node bin/spec_to_console.js \
 
 ### Information used in Console that is not available in the REST spec
 * Request bodies
+* Data fetched at runtime: indices, fields, snapshots, etc
+* Ad hoc additions
