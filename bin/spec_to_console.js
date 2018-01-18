@@ -24,7 +24,7 @@ files.forEach(file => {
   if (program.directory) {
     const outputName = path.basename(file)
     const outputPath = path.resolve(program.directory, outputName)
-    fs.writeFileSync(outputPath, output)
+    fs.writeFileSync(outputPath, output + '\n')
   } else {
     console.log(output)
   }
