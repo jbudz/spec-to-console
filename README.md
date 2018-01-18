@@ -19,7 +19,7 @@ git pull --depth=1 origin master
 ```
 node bin/spec_to_console.js \
   -g "es-spec/rest-api-spec/src/main/resources/rest-api-spec/api/*.json" \
-  -d "../kibana/src/core_plugins/console/api_server/spec"
+  -d "../kibana/src/core_plugins/console/api_server/spec/generated"
 ```
 
 ### Information used in Console that is not available in the REST spec
